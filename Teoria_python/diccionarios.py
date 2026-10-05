@@ -1,0 +1,60 @@
+# Dictionaries are used to store data values in key:value pairs.
+# A dictionary is a collection which is ordered*, changeable and do not allow duplicates.
+
+coche = {
+    "marca": "Seat",
+    "modelo": "Ateca",
+    "color": "blanco",
+    "kilometros": 125000
+}
+
+# muestra el diccionario completo
+print("coche:", coche)
+
+# muestra un elemento con notación []
+print('coche["color"]:', coche["color"])
+print('coche["kilometros"]:', coche["kilometros"])
+# muestra un elemento con método get
+print('coche.get("modelo"):', coche.get("modelo"))
+# el . get es exactamente igual que el anterior sin el pero son dos formas distintas que interesa que se sepan.
+
+# Recorro los valores del diccionario y sus claves
+print("Bucle for que recorre diccionario")
+for clave in coche:
+    print(" *", clave, "=>", coche[clave])
+    print(" *", clave, "=>", coche.get(clave))
+
+
+# Otra forma: items()
+# `items()` permite obtener directamente la clave y el valor 
+#  en cada iteración. Rn muchos casos resulta más cómodo y legible.
+print("Bucle for que recorre diccionario con .items()")
+for clave, valor in coche.items():# gracias a items nos devuelve lo anterior por defecto, es decir dos valores. 
+    print(" - ", clave, "=>", valor)
+
+# Modificar diccionario 
+# con notación []   
+coche["color"] = "gris"
+# con método update
+coche.update({"kilometros": 99999}) 
+print("coche tras modificaciones:", coche)
+
+# Añadir nuevas claves
+coche["taller"] = "Alterio reparaciones"
+print("coche tras añadir clave:", coche)
+
+# uso de values() y keys() 
+valores = coche.values()
+print("valores:", valores)
+claves = coche.keys()
+print("keys:", claves)
+#Esto lo usamos para extraer o los valores de cada opcion o las keys.
+#keys en nuestro caso es marca y valor seria Seat.
+#Es posible editar las claves y keys ya que son dinamicas es decir, se actualizan.
+
+# las variables asignadas con values y keys()
+#  se actualizan tras cambios en el diccionario
+print('Se añade precio: coche["precio"] = 17000')
+coche["precio"] = 17000
+print("valores:", valores)
+print("keys:", claves)
